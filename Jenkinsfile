@@ -67,6 +67,9 @@ pipeline {
                     // Ensure kubectl is using Minikube's Docker environment
                     sh 'eval $(minikube -p minikube docker-env)'
                     
+                    // Replace the placeholder in deployment.yaml with the actual build number
+                    sh "sed -i '' 's/\${BUILD_NUMBER}/${BUILD_NUMBER}/g' deployment.yaml"
+                    
                     // Check if the deployment exists
                     def deploymentExists = sh(script: "kubectl get deployment ${DEPLOYMENT_NAME}", returnStatus: true) == 0
 
@@ -83,6 +86,7 @@ pipeline {
                 }
             }
         }
+
 
         stage('Postman Testing') {
             steps {
