@@ -93,7 +93,7 @@ pipeline {
                 // Run Postman tests
                 script {
                     try {
-                        sh "newman run ${POSTMAN_COLLECTION}"
+                        sh 'export PATH=$(npm config get prefix)/bin:$PATH && newman run RegCollection.postman_collection.json'
                     } catch (Exception e) {
                         echo "Postman tests failed but build continues..."
                     }
