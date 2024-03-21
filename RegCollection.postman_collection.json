@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "bf21fb8e-35c9-4c2b-bb29-584470c7d970",
+		"name": "RegCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32784933"
+	},
+	"item": [
+		{
+			"name": "register duplicate patient",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWNhNWQ1MGRlMjA1YjM4ZTcxNDRkYzUiLCJ1c2VybmFtZSI6ImNsZXJrVXNlciIsInJvbGVzIjpbImNsZXJrIl0sImlhdCI6MTcwOTI3ODc1NSwiZXhwIjoxNzA5Mjg1OTU1fQ.-Kj3bO7vY6L3y5e7ZQnWEw-6tW6NrMYeauerOC0Z3nE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \"pnumber\": \"12345678\",\n  \"pname\": \"John Doe\",\n   \"dob\": \"1990-05-15\",\n   \"blood\": \"A+\",\n   \"gender\": \"male\",\n    \"through\": \"OPD\",\n   \"knowndiseases\": [\"Diabetes\", \"Hypertension\"],\n   \"knownallergies\": [\"Penicillin\"]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/patient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register new patient",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWNhNWQ1MGRlMjA1YjM4ZTcxNDRkYzUiLCJ1c2VybmFtZSI6ImNsZXJrVXNlciIsInJvbGVzIjpbImNsZXJrIl0sImlhdCI6MTcwOTI3ODc1NSwiZXhwIjoxNzA5Mjg1OTU1fQ.-Kj3bO7vY6L3y5e7ZQnWEw-6tW6NrMYeauerOC0Z3nE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \"pnumber\": \"15345678\",\n  \"pname\": \"khulood\",\n   \"dob\": \"1990-05-15\",\n   \"blood\": \"A+\",\n   \"gender\": \"male\",\n    \"through\": \"OPD\",\n   \"knowndiseases\": [\"Diabetes\", \"Hypertension\"],\n   \"knownallergies\": [\"Penicillin\"]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/patient/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"patient",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient Records by Patient Number",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWNhNWQ1MGRlMjA1YjM4ZTcxNDRkYzUiLCJ1c2VybmFtZSI6ImNsZXJrVXNlciIsInJvbGVzIjpbImNsZXJrIl0sImlhdCI6MTcwOTI3ODc1NSwiZXhwIjoxNzA5Mjg1OTU1fQ.-Kj3bO7vY6L3y5e7ZQnWEw-6tW6NrMYeauerOC0Z3nE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/patientByNumber/12345678",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"patientByNumber",
+						"12345678"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient record by name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWNhNWQ1MGRlMjA1YjM4ZTcxNDRkYzUiLCJ1c2VybmFtZSI6ImNsZXJrVXNlciIsInJvbGVzIjpbImNsZXJrIl0sImlhdCI6MTcwOTI3ODc1NSwiZXhwIjoxNzA5Mjg1OTU1fQ.-Kj3bO7vY6L3y5e7ZQnWEw-6tW6NrMYeauerOC0Z3nE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/PatientsByName/John",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"PatientsByName",
+						"John"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all patient",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWNhNWQ1MGRlMjA1YjM4ZTcxNDRkYzUiLCJ1c2VybmFtZSI6ImNsZXJrVXNlciIsInJvbGVzIjpbImNsZXJrIl0sImlhdCI6MTcwOTI3ODc1NSwiZXhwIjoxNzA5Mjg1OTU1fQ.-Kj3bO7vY6L3y5e7ZQnWEw-6tW6NrMYeauerOC0Z3nE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/allPatients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"allPatients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Patient Record",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWNhNWQ1MGRlMjA1YjM4ZTcxNDRkYzUiLCJ1c2VybmFtZSI6ImNsZXJrVXNlciIsInJvbGVzIjpbImNsZXJrIl0sImlhdCI6MTcwOTI3ODc1NSwiZXhwIjoxNzA5Mjg1OTU1fQ.-Kj3bO7vY6L3y5e7ZQnWEw-6tW6NrMYeauerOC0Z3nE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/patientByNumber/15345678",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"patientByNumber",
+						"15345678"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Non-existent Patient Record",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWNhNWQ1MGRlMjA1YjM4ZTcxNDRkYzUiLCJ1c2VybmFtZSI6ImNsZXJrVXNlciIsInJvbGVzIjpbImNsZXJrIl0sImlhdCI6MTcwOTI3ODc1NSwiZXhwIjoxNzA5Mjg1OTU1fQ.-Kj3bO7vY6L3y5e7ZQnWEw-6tW6NrMYeauerOC0Z3nE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/patientByNumber/92929292",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"patientByNumber",
+						"92929292"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
